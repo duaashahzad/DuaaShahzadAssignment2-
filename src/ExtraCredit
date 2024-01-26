@@ -1,0 +1,35 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+def not_fibonacci(number_of_terms):
+    sequence = np.zeros(number_of_terms)
+    sequence[0] = 0
+    sequence[1] = 1
+
+    for i in range(number_of_terms - 2):
+        sequence[i + 2] = sequence[i + 1] * 2 + sequence[i] * 3
+
+    return sequence
+
+def main():
+    number_of_terms = 1000
+    sequence = not_fibonacci(number_of_terms)
+
+    # Plotting
+    plt.plot(sequence[:1000])
+    plt.title('NotFibonacci Sequence')
+    plt.xlabel('Index')
+    plt.ylabel('Value')
+    plt.show()
+
+if __name__ == "__main__":
+    main()
+
+Error: <ipython-input-13-ec0a5a7876ae>:10: RuntimeWarning: overflow encountered in double_scalars
+         sequence[i + 2] = sequence[i + 1] * 2 + sequence[i] * 3
+       /usr/local/lib/python3.10/dist-packages/matplotlib/ticker.py:2094: RuntimeWarning: overflow encountered in multiply
+         steps = self._extended_steps * scale
+
+Problem: The problem I am recieving shows me that the equation is not able to compute as a double because the numbers are
+         too large. To resolve this, I would need to use a BigInteger like I have in my original java code. The error also
+         shows there is an issue with my files.

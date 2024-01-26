@@ -1,0 +1,174 @@
+Common Subsequence:
+    public static int longestCommonSubsequence(String text1, String text2)
+        {
+            int text1Length = text1.length();                                     -> 1 declaration    -> O(1)
+            int text2Length = text2.length();                                     -> 1 declaration    -> O(1)
+
+            //2D array to store lcs lengths
+            int[][] current = new int[text1Length + 1][text2Length + 1];          -> 1 declaration    -> O(1)
+
+            //put lcs lengths in array
+            for(int i = 1; i <= text1Length; i++)                                 -> 1 declaration    -> O(m)
+            {
+                for(int j = 1; j <= text2Length; j++) {                           -> 1 declaration    -> O(n)
+
+                    //characters match
+                    if (text1.charAt(i - 1) == text2.charAt(j - 1)) {                                 -> O(1)
+
+                        //extends lcs from previous diagonal cell and add 1
+                        current[i][j] = current[i - 1][j - 1] + 1;                                    -> O(1)
+
+                    //characters do not match
+                    } else {                                                                          -> O(1)
+
+                        //take max of lcs lengths from either characters
+                        current[i][j] = Math.max(current[i - 1][j], current[i][j - 1]);               -> O(1)
+                    }
+                }
+            }
+
+            return current[text1Length][text2Length];                                                 -> O(1)
+        }
+
+
+    Time Complexity:
+        Big-O Notation: O(m * n)
+        Big-Omega Notation: Ω(m)
+            The algorithm find the longest common subsequence with a time complexity of O(m*n). The nested for-loops
+        contribure to the cost. The body of the loops contain constant time operations and their effects
+        do not exist each iteration. Big-O Notation is O(m*n) and Big-Omega Notation is O(m) because the larger strings
+        experience longer execution times.
+
+
+Common Substring:
+    public static String longestCommonSubsequence(String text1, String text2)
+        {
+            int text1Length = text1.length();                                     -> 1 declaration    -> O(1)
+            int text2Length = text2.length();                                     -> 1 declaration    -> O(1)
+
+            int[][] current = new int[text1Length + 1][text2Length + 1];          -> 1 declaration    -> O(1)
+
+            int maxLength = 0;                                                    -> 1 declaration    -> O(1)
+            int endIndex = 0;                                                     -> 1 declaration    -> O(1)
+
+            for (int i = 1; i <= text1Length; i++) {                              -> 1 declaration    -> O(m)
+                for (int j = 1; j <= text2Length; j++) {                          -> 1 declaration    -> O(n)
+                    if (text1.charAt(i - 1) == text2.charAt(j - 1)) {                                 -> O(1)
+                        current[i][j] = current[i - 1][j - 1] + 1;                                    -> O(1)
+
+                        if (current[i][j] > maxLength) {                                              -> O(1)
+                            maxLength = current[i][j];                                                -> O(1)
+                            endIndex = i - 1;                                                         -> O(1)
+                        }
+                    } else {                                                                          -> O(1)
+                        current[i][j] = 0;                                                            -> O(1)
+                    }
+                }
+            }
+
+            if (maxLength == 0) {                                                                     -> O(1)
+                return "";                                                                            -> O(1)
+            } else {                                                                                  -> O(1)
+                return text1.substring(endIndex - maxLength + 1, endIndex + 1);                       -> O(1)
+            }
+        }
+
+      Time Complexity:
+              Big-O Notation: O(m * n)
+              Big-Omega Notation: Ω(m)
+                 The algorithm uses two nested loops that iterate over each character in two different strings,
+              thus why it has a complexity of O(m*n). Each loop iteration involves constant comparisons. Big-Omega
+              would be O(m) because n remains constant throughout the algorithm.
+
+NotFibonacci:
+    public static BigInteger[] notFibonacci(int numberOfTerms)
+        {
+            BigInteger[] sequence = new BigInteger[numberOfTerms];                                   -> O(n)
+            sequence[0] = BigInteger.ZERO;                                                           -> O(1)
+            sequence[1] = BigInteger.ONE;                                                            -> O(1)
+
+            System.out.print("NotFibonacci Sequence: ");                                             -> O(1)
+
+            for(int i = 0; i < numberOfTerms; i++)                                                   -> O(n)
+            {
+                // Check if there are enough terms left to calculate the next one
+                System.out.print(sequence[i] + " ");                                                 -> O(1)
+                if( i < numberOfTerms -2 )
+                {
+                    // Multiply previous term by 3, add twice the term before that
+                    sequence[i+2] = sequence[i+1].multiply(BigInteger.valueOf(2)).add(sequence[i].multiply(BigInteger.valueOf(3)));  -> O(1)
+
+                }
+            }
+
+            return sequence;                                                                         -> O(1)
+        }
+
+
+        Time Complexity:
+                  Big-O Notation: O(n)
+                  Big-Omega Notation: Ω(n)
+                    The algorithm has a Big-O Notation time complexity is O(n) because of the for-loop iterating n times.
+                  The operations within the loop contribute constant time. Big-Omega is also O(n) because it will perform
+                  at least n iterations due to the loop.
+
+
+Where In Sequence:
+    public static int whereInSequence(BigInteger[] sequence, BigInteger input )
+        {
+            int closestNumber = 0;                                            -> O(1)
+
+            for(int i = 0; i < sequence.length; i++)                          -> O(n)
+            {
+                if(sequence[i].compareTo(input) == 0) //equals                -> O(1)
+                {
+                    return i+1;                                               -> O(1)
+                }
+                else if(sequence[i].compareTo(input) < 0) //is less than      -> O(1)
+                {
+                    closestNumber = i+1;                                      -> O(1)
+                }
+                else                                                          -> O(1)
+                {
+
+                }
+            }
+
+            return closestNumber;                                             -> O(1)
+        }
+
+        Time Complexity:
+                   Big-O Notation: O(n)
+                   Big-Omega Notation: Ω(1)
+                    The algorithm takes n iterations to find a match through the sequence,
+                   thus why Big-O Notation is O(n) with the for-loops. Big-Omega Notation
+                   is O(1) when the target element is at the start of the sequence, thus
+                   it taking only 1 iteration. The algorithm takes either constant or O(n)
+                   time depending on where the target element is in the sequence.
+
+
+Remove Element:
+    public int removeElement(int[] nums, int val) {
+
+            int k = 0;                                                -> O(1)
+
+            for(int i = 0; i < nums.length; i++)   -> 1 declaration   -> O(n)
+            {
+                if(nums[i] != val)                                    -> O(1)
+                {
+                    nums[k] = nums[i];                                -> O(1)
+                    k++;                                              -> O(1)
+                }
+            }
+
+            return k;                                                 -> O(1)
+
+        }
+
+        Time Complexity:
+                   Big-O Notation: O(n)
+                   Big-Omega Notation: Ω(n)
+                        The algorithm iterates n times through the array using the for-loop,
+                       The loop contains comparisons and assignments which take constant time.
+                       Thus, Big-O Notation is O(n) and Big-Omega Notation is Ω(n). The bigger
+                       array is, the more time it takes to remove elements.
