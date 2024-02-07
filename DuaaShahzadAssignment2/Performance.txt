@@ -1,0 +1,67 @@
+
+
+Sorting algorithm - class BubbleSortSortingAlgorithms
+ Sorted 100 elements in 0.012329999999999997 ms (avg)
+ Sorted 500 elements in 0.03582499999999999 ms (avg)
+ Sorted 1000 elements in 0.117955 ms (avg)
+ Sorted 2000 elements in 0.425655 ms (avg)
+ Sorted 5000 elements in 2.472975 ms (avg)
+ Sorted 10000 elements in 9.273205 ms (avg)
+ Sorted 20000 elements in 39.457735 ms (avg)
+ Sorted 75000 elements in 636.49905 ms (avg)
+ Sorted 150000 elements in 2846.40982 ms (avg)
+
+Sorting algorithm - class InsertionSortSortingAlgorithms
+ Sorted 100 elements in 0.013345 ms (avg)
+ Sorted 500 elements in 0.01992 ms (avg)
+ Sorted 1000 elements in 0.008225000000000003 ms (avg)
+ Sorted 2000 elements in 0.017865000000000002 ms (avg)
+ Sorted 5000 elements in 0.05408500000000001 ms (avg)
+ Sorted 10000 elements in 0.08750000000000001 ms (avg)
+ Sorted 20000 elements in 0.17098 ms (avg)
+ Sorted 75000 elements in 0.5159050000000001 ms (avg)
+ Sorted 150000 elements in 1.0003549999999999 ms (avg)
+
+Sorting algorithm - class SelectionSortSortingAlgorithms
+ Sorted 100 elements in 0.022574999999999998 ms (avg)
+ Sorted 500 elements in 0.05818499999999999 ms (avg)
+ Sorted 1000 elements in 0.20175 ms (avg)
+ Sorted 2000 elements in 0.69845 ms (avg)
+ Sorted 5000 elements in 4.341475000000001 ms (avg)
+ Sorted 10000 elements in 21.401475 ms (avg)
+ Sorted 20000 elements in 233.18395 ms (avg)
+ Sorted 75000 elements in 1441.5751249999998 ms (avg)
+ Sorted 150000 elements in 6333.8496749999995 ms (avg)
+
+Sorting algorithm - class ShellSortSortingAlgorithms
+ Sorted 100 elements in 0.01217 ms (avg)
+ Sorted 500 elements in 0.01842 ms (avg)
+ Sorted 1000 elements in 0.011805 ms (avg)
+ Sorted 2000 elements in 0.02601 ms (avg)
+ Sorted 5000 elements in 0.07181499999999999 ms (avg)
+ Sorted 10000 elements in 0.15202999999999997 ms (avg)
+ Sorted 20000 elements in 0.315355 ms (avg)
+ Sorted 75000 elements in 1.2888700000000002 ms (avg)
+ Sorted 150000 elements in 2.570625 ms (avg)
+
+Sorting algorithm - class QuickSortSortingAlgorithms
+ Sorted 100 elements in 0.007694999999999996 ms (avg)
+ Sorted 500 elements in 0.01828 ms (avg)
+ Sorted 1000 elements in 0.027739999999999997 ms (avg)
+ Sorted 2000 elements in 0.05197499999999999 ms (avg)
+ Sorted 5000 elements in 0.127775 ms (avg)
+ Sorted 10000 elements in 0.25828 ms (avg)
+ Sorted 20000 elements in 0.5248299999999999 ms (avg)
+ Sorted 75000 elements in 2.032035 ms (avg)
+ Sorted 150000 elements in 4.089530000000001 ms (avg)
+
+Sorting algorithm - class MergeSortSortingAlgorithms
+ Sorted 100 elements in 0.010499999999999999 ms (avg)
+ Sorted 500 elements in 0.027870000000000006 ms (avg)
+ Sorted 1000 elements in 0.034705 ms (avg)
+ Sorted 2000 elements in 0.065205 ms (avg)
+ Sorted 5000 elements in 0.17033000000000004 ms (avg)
+ Sorted 10000 elements in 0.344835 ms (avg)
+ Sorted 20000 elements in 0.7482599999999999 ms (avg)
+ Sorted 75000 elements in 2.609225 ms (avg)
+ Sorted 150000 elements in 6.9943 ms (avg)
